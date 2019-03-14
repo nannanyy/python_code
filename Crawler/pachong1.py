@@ -1,8 +1,8 @@
 import urllib.request
 
-def hqyuanma(yuming):
-    re = urllib.request.urlopen(yuming)
-    yuanma = re.read()
+def hqyuanma(url):
+    re = urllib.request.urlopen(url,timeout=2)
+    yuanma = re.read().decode()
     print(yuanma)
     return yuanma
 
