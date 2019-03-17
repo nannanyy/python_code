@@ -14,19 +14,17 @@ def hqyuanma(url):
 def jiexi(yuanma):
     code_obj = BeautifulSoup(yuanma, "html.parser")     #解析
     tags = code_obj.find_all('a')      #用find_all方法，根据共有标签a，找到源码中所有URL
-    urls = set()
+    urls = set()                       #创建空集合，set()
     for tag in tags:
-        print(tag)
-        url = tag['href']
-        print(url)
-        urls.add(url)
-    print(len(urls))
+        url = tag['href']              #提取a中URL，也可用 tag.get('href')
+        urls.add(url)                  #给空集合添加元素，集合名.add(集合数据)
+    print(len(urls))                   #打印集合长度
     return urls
 
 
 
 url = "https://baidu.com"              #定义变量data
 code = hqyuanma(url)                   #调用获取源码方法
-a = jiexi(code)                            #调用解析HTML，返回HTML中所有URL
-print(a)
+urljihe = jiexi(code)                  #打印方法，得到return!!
+print(urljihe)
 
