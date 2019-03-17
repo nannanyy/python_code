@@ -16,7 +16,7 @@ def jiexi(yuanma):
     tags = code_obj.find_all('a')      #用find_all方法，根据共有标签a，找到源码中所有URL
     urls = set()                       #创建空集合，set()
     for tag in tags:
-        url = tag['href']              #提取a中URL，也可用 tag.get('href')
+        url = tag['href']              #提取a中URL，也可用 xx.get('href')/xx['元素key']
         urls.add(url)                  #给空集合添加元素，集合名.add(集合数据)
     print(len(urls))                   #打印集合长度
     return urls
