@@ -10,6 +10,13 @@ def hqyuanma(url):
     return yuanma
 
 
+def hturl(url):                         #判断是否可访问URL
+    if "http" in url:
+        return True
+    else:
+        return False
+
+
 #定义方法，解析源码！
 def jiexi(yuanma):
     code_obj = BeautifulSoup(yuanma, "html.parser")     #解析
@@ -19,7 +26,16 @@ def jiexi(yuanma):
         url = tag['href']              #提取a中URL，也可用 xx.get('href')/xx['元素key']
         urls.add(url)                  #给空集合添加元素，集合名.add(集合数据)
     print(len(urls))                   #打印集合长度
-    return urls
+    print(urls)
+
+    hurl = set()
+    for urlji in urls:
+        if hturl(urlji):
+            hurl.add(urlji)
+    return hurl
+
+
+
 
 
 
@@ -27,4 +43,3 @@ url = "https://baidu.com"              #定义变量data
 code = hqyuanma(url)                   #调用获取源码方法
 urljihe = jiexi(code)                  #打印方法，得到return!!
 print(urljihe)
-
