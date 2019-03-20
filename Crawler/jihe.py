@@ -34,9 +34,13 @@ print(len(jihe3))       #3.计算集合元素个数
 jihe3.clear()       #4.清空集合元素
 print(jihe3)
 
-"A" in jihe2    #判断元素是否在集合中存在
+"A" in jihe2    #5.判断元素是否在集合中存在
 
 
-jihe4 = jihe2.copy()        #copy集合
+jihe4 = jihe2.copy()        #6.copy集合
 print(jihe4)
+
+jihe6 = {"777","333"}
+jihe5 = jihe6.union(jihe2)      #7.集合合并
+print(jihe5)
 
